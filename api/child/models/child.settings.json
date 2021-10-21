@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "children",
+  "info": {
+    "name": "Child",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ChildID": {
+      "type": "uid"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Gender": {
+      "type": "string"
+    },
+    "Grade": {
+      "type": "string"
+    },
+    "Age": {
+      "type": "integer"
+    },
+    "parentEmail": {
+      "type": "email"
+    }
+  }
+}

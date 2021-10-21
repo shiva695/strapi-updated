@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "user_infos",
+  "collectionName": "reports",
   "info": {
-    "name": "UserInfo",
+    "name": "Report",
     "description": ""
   },
   "options": {
@@ -12,14 +12,17 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "ParentName": {
+    "ReportID": {
+      "type": "uid"
+    },
+    "AssessmentID": {
       "type": "string"
     },
-    "Email": {
-      "type": "email"
+    "Score": {
+      "type": "integer"
     },
-    "Mobile": {
-      "type": "biginteger"
+    "ChildID": {
+      "type": "string"
     }
   }
 }
