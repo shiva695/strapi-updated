@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "userfetches",
+  "info": {
+    "name": "Userfetch",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "city": {
+      "type": "string"
+    },
+    "activityName": {
+      "type": "string"
+    },
+    "score": {
+      "type": "integer"
+    },
+    "grade": {
+      "type": "string"
+    },
+    "healthAttributes": {
+      "type": "text"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "ChildID": {
+      "type": "uid"
+    }
+  }
+}

@@ -6,7 +6,9 @@
 
 module.exports = {
     async create( ctx )
-    {
+    {    
+
+        //  signup
         let { name, email, password, mobile } = ctx.request.body;
 
         let response = {};
@@ -14,7 +16,8 @@ module.exports = {
         let user = await strapi.query( 'user', 'users-permissions' ).findOne( {username: name } );
 
         if ( name != null && email != null && password != null && mobile != null && user == null)
-        {
+        {   
+            // auth/local/register  for initial signup  ============== start
             let userRegisterReqBody = {
                 username: name,
                 email: email,
@@ -24,6 +27,11 @@ module.exports = {
                 "/auth/local/register",
                 userRegisterReqBody
             );
+            
+            //  auth/local/register  for initial signup  ============== end
+              
+
+            // signup response ================== starts
 
             let createUserInformationReqBody = {
                 ParentName: name,
@@ -39,9 +47,13 @@ module.exports = {
             response.username = initSignup.data.user.username;
             response.email = initSignup.data.user.email;
             return response;
+
+            // signup response ===================== ends
         }
         else
-        {
+        {   
+            // user created and login with email and password ==== starts 
+
             if (email != null && password != null && user != null )
             {
                 let userLoginReqBody = {
@@ -58,6 +70,8 @@ module.exports = {
 
                 let userInformation = await strapi.query( "user-info" ).findOne( { Email: email } );
                 response.userinformation = userInformation
+
+                // user created response  ========= ends
 
                 let children = await strapi.query( 'child' ).find( { parentEmail: email, _limit: 10 } );
 

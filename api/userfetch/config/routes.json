@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/userfetches",
+      "handler": "userfetch.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/userfetches/count",
+      "handler": "userfetch.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/userfetches/:id",
+      "handler": "userfetch.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/userfetches",
+      "handler": "userfetch.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/userfetches/:id",
+      "handler": "userfetch.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/userfetches/:id",
+      "handler": "userfetch.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
